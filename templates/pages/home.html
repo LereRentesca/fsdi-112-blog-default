@@ -1,14 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-</head>
-<body>
-    <div>
-        <h1>Home Page</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor atque nemo magni aliquid saepe vel illo, possimus quisquam quasi nihil enim sequi consequatur modi distinctio quia accusantium quae ipsum totam a. Quod voluptatibus ex officiis eius voluptatum dolor nobis ratione, saepe consequatur libero similique hic atque eaque laudantium! Ratione molestias inventore reiciendis sed ex laudantium obcaecati asperiores ipsum eaque placeat. Voluptatum illo tempore obcaecati? Ea nesciunt voluptatibus ducimus, repudiandae excepturi officiis, placeat accusantium laudantium perspiciatis hic explicabo, voluptas ratione tempore quasi eum! Saepe eos similique modi!</p>
-    </div>
-</body>
-</html>
+<!-- On the rest of htmls like this one, we need to add extends first and the file -->
+{% extends 'base.html' %}
+<!-- Next to extends we will add load tag IF we need external css/js/img -->
+{% load static %}
+
+<!-- If we need any block from the base.html we just need to call it like this -->
+{% block css %}
+    <!-- For static tags like "link", "script" and "img" on the src or href property -->
+    <!-- We follow the syntax {% static 'file.extension' %}-->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <h1>Home Page using Jinja Tags!</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi ab nostrum voluptatem odit consequatur! Nulla aut distinctio ad nisi accusantium. Nihil eos nisi enim non vel earum omnis repellendus totam aut quam itaque corporis delectus praesentium neque eum, perferendis pariatur ullam incidunt excepturi! Assumenda, laudantium blanditiis nulla commodi, tempora sapiente dolore ea voluptatem vitae facere laborum doloribus quidem consectetur laboriosam, deleniti modi? Tempora necessitatibus laudantium amet doloribus repellat ea nam possimus, libero voluptatum eaque, laboriosam dolor officiis error voluptatibus, quas saepe praesentium. Veritatis fugit illo reprehenderit temporibus vel consequatur beatae praesentium illum neque.</p>
+    <img src="{% static 'img/example.jpg' %}" alt="Example">
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
