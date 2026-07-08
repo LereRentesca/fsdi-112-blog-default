@@ -17,6 +17,16 @@
 - Introduction of static files (how to load css, js and images on htmls)
 - Do the example with the home.html and give them some time to adjust the other htmls.
 
+## If you need extra topics
+
+- Show them the admin page and help them creating a the superuser from the terminal
+    - Step 1: Open a terminal on the desired folder and activate the venv
+    - Step 2: Run the command "python manage.py createsuperuser"
+    - Step 3: The terminal will prompt you to enter: username, email, password (I always tell them to call it admin and the same for the password)
+    - Step 4: The terminal will prompt you if you want to bypass and type the letter "y", then hit enter
+    - Step 5: Run the server "python manage.py runserver" and go to localhost:8000/admin
+    - Step 6: Log in as admin and show the system
+
 ## Additional notes
 
 1. **{% extends 'file.html' %}** | This tag allow us to get the content from another html (in this case our base.html)
